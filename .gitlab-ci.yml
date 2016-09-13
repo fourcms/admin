@@ -1,0 +1,19 @@
+cache:
+    paths:
+        - vendor/
+    group: sharedcache
+
+stages:
+    - test
+
+testing:
+    stage: test
+    script:
+        - composer self-update
+        - composer install --prefer-dist --quiet --no-interaction
+        - echo "### Checking PHP Code Style"
+        - "./vendor/bin/phpcs --standard=phpcs.xml -spn --encoding=utf-8 src/ --report-width=150"
+        #- echo "### Running PHPUnit Tests"
+        #- ./vendor/bin/phpunit --coverage-text --colors=never
+        - echo "### Update Packagist Repository"
+        - curl -fsS https://packagist.itdc.ge/hook.php > /dev/null
