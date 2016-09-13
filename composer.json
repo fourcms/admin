@@ -16,7 +16,7 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*|5.2.*",
         "longman/laravel-platfourm": "dev-master",
-        "fourcms/auth": "dev-master"
+        "fourcms/auth": "~1.0.0"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

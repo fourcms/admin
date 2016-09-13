@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c8d5c82ad88fca3eea48a67772edaeef",
-    "content-hash": "2e72f7c1db440c6f91a866eb37b031fd",
+    "hash": "904fe8a731aec55c6af3d9fa26a373fc",
+    "content-hash": "a78d02f05e477e5890cef7162685a65d",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -163,17 +163,17 @@
         },
         {
             "name": "fourcms/auth",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.itdc.ge:fourcms/auth.git",
-                "reference": "c3851aedd687a5cc358e27501b8452a045bf1fd0"
+                "reference": "90d985e399f650811c80ca06fc3b2605f55c8c13"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://packagist.itdc.ge/dist/fourcms-auth-dev-master-c9c6b9.tar",
-                "reference": "c3851aedd687a5cc358e27501b8452a045bf1fd0",
-                "shasum": "68533c9cdd50f1ee44e256718ba4e234642144dd"
+                "url": "https://packagist.itdc.ge/dist/fourcms-auth-1.0.0-d2bd7a.tar",
+                "reference": "90d985e399f650811c80ca06fc3b2605f55c8c13",
+                "shasum": "91cd2fdb7ebb054b916267667819887badd3a376"
             },
             "require": {
                 "guzzlehttp/guzzle": "~6.2",
@@ -3985,8 +3985,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "longman/laravel-platfourm": 20,
-        "fourcms/auth": 20
+        "longman/laravel-platfourm": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
