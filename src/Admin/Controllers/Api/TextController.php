@@ -217,6 +217,7 @@ class TextController extends ApiController
 
         $options             = [];
         $options['in:scope'] = ['global', 'admin'];
+        $options['lang']     = App::getLocale();
         $items               = $service->run(['key', 'value'], $options);
 
         return $this->response($items);
