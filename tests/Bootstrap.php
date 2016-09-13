@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the Laravel MultiLang package.
+ * This file is part of the FourCms Admin package.
  *
  * (c) Avtandil Kikabidze aka LONGMAN <akalongman@gmail.com>
  *
