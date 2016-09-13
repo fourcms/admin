@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "904fe8a731aec55c6af3d9fa26a373fc",
-    "content-hash": "a78d02f05e477e5890cef7162685a65d",
+    "hash": "8a728f5c1c089b203c87f29ed5660660",
+    "content-hash": "1fbb81f34e46f8cde60c0cd39877712f",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -163,22 +163,22 @@
         },
         {
             "name": "fourcms/auth",
-            "version": "1.0.0",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.itdc.ge:fourcms/auth.git",
-                "reference": "90d985e399f650811c80ca06fc3b2605f55c8c13"
+                "reference": "70c9ec63e73a4cb5198deb8100570f0f4bf15dfe"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://packagist.itdc.ge/dist/fourcms-auth-1.0.0-d2bd7a.tar",
-                "reference": "90d985e399f650811c80ca06fc3b2605f55c8c13",
-                "shasum": "91cd2fdb7ebb054b916267667819887badd3a376"
+                "url": "https://packagist.itdc.ge/dist/fourcms-auth-1.0.3-86a227.tar",
+                "reference": "70c9ec63e73a4cb5198deb8100570f0f4bf15dfe",
+                "shasum": "b462cebae0e71a94a7809b169fbf8ccb6f03d2e6"
             },
             "require": {
                 "guzzlehttp/guzzle": "~6.2",
                 "laravel/framework": "5.1.*|5.2.*",
-                "longman/laravel-platfourm": "dev-master",
+                "longman/laravel-platfourm": "~0.0.1",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -214,7 +214,7 @@
             "keywords": [
                 "fourcms"
             ],
-            "time": "2016-09-13 08:26:04"
+            "time": "2016-09-13 09:10:04"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -809,7 +809,7 @@
         },
         {
             "name": "longman/laravel-platfourm",
-            "version": "dev-master",
+            "version": "0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/akalongman/laravel-platfourm.git",
@@ -842,11 +842,7 @@
                     "src/helpers.php"
                 ]
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -868,10 +864,6 @@
                 "repository",
                 "service"
             ],
-            "support": {
-                "issues": "https://github.com/akalongman/laravel-platfourm/issues",
-                "source": "https://github.com/akalongman/laravel-platfourm"
-            },
             "time": "2016-09-09 09:13:59"
         },
         {
@@ -3984,9 +3976,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "longman/laravel-platfourm": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
