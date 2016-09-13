@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Admin package for fourcms",
     "keywords": ["fourcms"],
-    "license": "MIT",
+    "license": "proprietary",
     "authors": [
         {
             "name": "Avtandil Kikabidze aka LONGMAN",
