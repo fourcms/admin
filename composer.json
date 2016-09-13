@@ -15,7 +15,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*|5.2.*",
-        "longman/laravel-platfourm": "dev-master",
+        "longman/laravel-platfourm": "~0.1",
         "fourcms/auth": "~1.0.0"
     },
     "require-dev": {
@@ -39,10 +39,6 @@
         }
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/akalongman/laravel-platfourm"
-        },
         {
             "type": "composer",
             "url": "https://packagist.itdc.ge"
