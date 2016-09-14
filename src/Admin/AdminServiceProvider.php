@@ -29,5 +29,25 @@ class AdminServiceProvider extends ServiceProvider
 
         $loader = AliasLoader::getInstance();
         $loader->alias('Admin', '\FourCms\Admin\Facades\Admin');
+
+        $this->appendPathToSwagger();
+    }
+
+    public function appendPathToSwagger()
+    {
+        $current = config('l5-swagger.paths.annotations');
+        if (empty($current)) {
+            return false;
+        }
+
+        if (!is_array($current)) {
+            $current = (array)$current;
+        }
+
+        $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Controllers';
+        $current[] = $path;
+
+        // Append to config
+        config(['l5-swagger.paths.annotations' => $current]);
     }
 }
