@@ -157,7 +157,6 @@ class AuthController extends ApiController
         try {
             $service->run();
         } catch (Exception $e) {
-
         }
 
         $avatar = $user->getAvatar();

@@ -42,5 +42,4 @@ Route::group(['middleware' => 'admin.api', 'namespace' => '\FourCms\Admin\Contro
         // Application entry point
         Route::get('{all?}', 'HomeController@index')->where('all', '.*');
     });
-
 });

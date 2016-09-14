@@ -41,6 +41,7 @@ class ProfileController extends Controller
         $item        = $userService->run($request->all());
 
         return $this->redirect('profile')
-            ->with('success', 'Profile updated successfully');;
+            ->with('success', 'Profile updated successfully');
+        ;
     }
 }
