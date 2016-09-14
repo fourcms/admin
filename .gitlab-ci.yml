@@ -4,6 +4,7 @@ stages:
 testing:
     stage: test
     script:
+        - echo "$COMPOSER_AUTH" > $HOME/.composer/auth.json
         - composer self-update
         - composer install --prefer-dist --quiet --no-interaction
         - echo "### Checking PHP Code Style"
