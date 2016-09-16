@@ -1,0 +1,17 @@
+.box-footer.box-footer-btn-group {
+    height: 54px;
+}
+
+.box-footer.box-footer-btn-group .loader-sm {
+    min-height: 54px;
+}
+
+.box-footer.box-footer-btn-group .loader-sm.loading {
+    margin: -10px -15px;
+}
+
+.box-footer.box-footer-btn-group.text-right .loader-sm.loading > .spinner {
+    right: 16px;
+    font-size: 0.5em;
+    left: inherit;
+}

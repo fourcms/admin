@@ -1,0 +1,34 @@
+label.form-group {
+    display: block;
+    max-width: none;
+    font-weight: inherit;
+
+    .control-label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+}
+
+.input-xs {
+    height: 22px;
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.input-group-xs>.form-control,
+.input-group-xs>.input-group-addon,
+.input-group-xs>.input-group-btn>.btn {
+    height: 22px;
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.input-xs + .form-control-feedback {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+}
