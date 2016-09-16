@@ -18,11 +18,26 @@ class AdminServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        // Publish config files
+        $this->publishes(
+            [
+                __DIR__ . '/../config/config.php' => config_path('fourcms/admin.php'),
+                __DIR__ . '/../views'             => base_path('resources/views/vendor/admin'),
+            ]
+        );
+
+        // Append the country settings
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/config.php',
+            'fourcms.admin'
+        );
+
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'admin');
     }
 
     public function register()
     {
-        $this->app->singleton('itdc.admin', function () {
+        $this->app->singleton('fourcms.admin', function () {
             $admin = new Admin();
             return $admin;
         });
@@ -44,7 +59,7 @@ class AdminServiceProvider extends ServiceProvider
             $current = (array)$current;
         }
 
-        $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Controllers';
+        $path      = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Controllers';
         $current[] = $path;
 
         // Append to config
