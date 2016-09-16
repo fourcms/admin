@@ -4,6 +4,8 @@
 
     <arg name="colors"/>
 
+    <exclude-pattern>src/resources/*</exclude-pattern>
+
     <rule ref="PSR2">
         <exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody"/>
     </rule>
