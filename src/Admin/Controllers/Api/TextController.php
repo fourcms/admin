@@ -11,8 +11,8 @@
 namespace FourCms\Admin\Controllers\Api;
 
 use App;
-use Illuminate\Http\Request;
 use FourCms\Admin\Controllers\ApiController;
+use Illuminate\Http\Request;
 use Longman\Platfourm\Text\Services\AutosaveTextsService;
 use Longman\Platfourm\Text\Services\GetTextsService;
 use Longman\Platfourm\Text\Services\GetTranslationsService;
@@ -124,6 +124,18 @@ class TextController extends ApiController
             $options['scope'] = $scope;
         }
         $items = $service->run($fields, $options, $perPage, $page, $sortBy);
+
+        if (!empty($options['search']) && $items->total()) {
+            $service = $this->app->make(GetTextsService::class);
+            $keys = array_keys($items->all());
+
+            $options           = [];
+            $options['in:key'] = $keys;
+            if ($scope) {
+                $options['scope'] = $scope;
+            }
+            $items = $service->run($fields, $options, $perPage, $page, $sortBy);
+        }
 
         return $this->response($items->toArray());
     }
