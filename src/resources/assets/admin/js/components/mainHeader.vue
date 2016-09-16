@@ -5,7 +5,7 @@
             <span class="logo-lg"><b>FOUR</b></span>
         </page>
         <nav class="navbar navbar-static-top" role="navigation">
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <a v-if="user" href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="sr-only">{{ t('toggle_navigation') }}</span>
             </a>
             <div class="navbar-custom-menu">
@@ -26,7 +26,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown user user-menu" :class="{active: 'userProfile' == $root.currentPage}">
+                    <li v-if="user" class="dropdown user user-menu" :class="{active: 'userProfile' == $root.currentPage}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <img :src="user.avatar" class="user-image" />
                             <span class="hidden-xs">

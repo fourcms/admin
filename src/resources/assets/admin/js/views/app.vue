@@ -1,7 +1,7 @@
 <template>
     <div :class="{wrapper: user, 'login-page': currentPage == 'login'}">
         <loading :status="loaded">
-            <main-header v-if="user"></main-header>
+            <main-header></main-header>
             <main-sidebar v-if="user"></main-sidebar>
             <component :is="currentPage" v-if="pageLoaded"></component>
         </loading>
