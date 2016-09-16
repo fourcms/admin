@@ -18,21 +18,21 @@ class AdminServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // Publish config files
-        $this->publishes(
+        // Publish files
+        /*$this->publishes(
             [
                 __DIR__ . '/../config/config.php' => config_path('fourcms/admin.php'),
-                __DIR__ . '/../views'             => base_path('resources/views/vendor/admin'),
+                __DIR__ . '/../resources/views'   => base_path('resources/views/vendor/fourcms/admin'),
             ]
-        );
+        );*/
 
-        // Append the country settings
+        // Append the missing package settings
         $this->mergeConfigFrom(
             __DIR__ . '/../config/config.php',
             'fourcms.admin'
         );
 
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'admin');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'fourcms/admin');
     }
 
     public function register()

@@ -34,7 +34,6 @@ class AuthController extends ApiController
         ];
         $auth['only']  = [
             'getUser',
-            'getLogout',
             'getAvatar',
         ];
 
@@ -108,8 +107,9 @@ class AuthController extends ApiController
     public function getLogout()
     {
         $service = $this->app->make(AuthUserService::class);
-        $user    = $service->user();
-        $service->logout();
+        if ($service->check()) {
+            $service->logout();
+        }
 
         return '';
     }

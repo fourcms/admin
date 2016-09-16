@@ -7,10 +7,10 @@ Route::group(['middleware' => 'admin.api', 'namespace' => '\FourCms\Admin\Contro
             // Authentication routes...
             Route::post('login', 'AuthController@postLogin');
             Route::get('login', 'AuthController@postLogin');
-            Route::get('logout', 'AuthController@getLogout');
             Route::get('user', 'AuthController@getUser');
             Route::get('avatar', 'AuthController@getAvatar');
         });
+        Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
         Route::group(['middleware' => 'admin.auth'], function () {
             // Dashboard

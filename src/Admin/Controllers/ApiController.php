@@ -10,8 +10,6 @@
 
 namespace FourCms\Admin\Controllers;
 
-use Longman\Platfourm\Http\Controllers\AdminController;
-
 /**
  * @SWG\Swagger(
  *     basePath="/ge",
@@ -28,7 +26,7 @@ use Longman\Platfourm\Http\Controllers\AdminController;
  *     ),
  * )
  */
-abstract class ApiController extends AdminController
+abstract class ApiController extends Controller
 {
 
 }
