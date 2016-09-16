@@ -1,0 +1,9 @@
+.modal {
+    &.in {
+        display: flex !important;
+    }
+    .modal-dialog {
+        align-self: center;
+        margin-bottom: 200px;
+    }
+}

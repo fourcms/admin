@@ -1,0 +1,16 @@
+a,
+.pointer {
+    cursor: pointer;
+}
+
+.del {
+    text-decoration: line-through;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.clickable {
+    pointer-events: all !important;
+}

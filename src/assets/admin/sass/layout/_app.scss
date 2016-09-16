@@ -1,0 +1,54 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    overflow-y: scroll;
+}
+
+body, .jumbotron {
+    background-color: #ecf0f5;
+}
+
+.main-header {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+.main-sidebar {
+    position: fixed;
+    height: 100%;
+}
+
+.login-page,
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    // height: 100%;
+    min-height: 100vh;
+}
+
+.content-wrapper,
+.right-side {
+    min-height: 0;
+    flex-grow: 1;
+    margin-top: 50px;
+}
+
+@media (max-width: $screen-sm-min) {
+    .main-header .logo {
+        display: none;
+    }
+    .main-sidebar, .left-side {
+        padding-top: 50px;
+    }
+}
+
+.navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+    right: 0 !important;
+}
