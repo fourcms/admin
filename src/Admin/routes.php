@@ -32,6 +32,8 @@ Route::group(['middleware' => 'admin.api', 'namespace' => '\FourCms\Admin\Contro
 
         Route::get('text/translations', 'TextController@getTranslations');
 
+        Route::get('config/public', 'ConfigController@getPublic');
+
         Route::get('{all?}', 'HomeController@error404')->where('all', '.*');
     });
 
