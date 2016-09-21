@@ -11,8 +11,14 @@ require('admin-lte');
 // require('imports?define=>false&exports=>false&require=>false!daterangepicker');
 // import 'helpers/app';
 
+import {SENTRY_DSN} from 'helpers/env';
+
+
 window.raven = require('raven-js');
 
-raven
-    .config('https://c290e01959494176ab5d8bdd17e00b4c@app.getsentry.com/94616')
-    .install();
+if (SENTRY_DSN) {
+    raven
+        .config(SENTRY_DSN)
+        .install();
+}
+
