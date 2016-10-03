@@ -21,7 +21,7 @@
                             {{ t(params.lang) }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li v-for="lang in langs" :class="{active: lang == params.lang}">
+                            <li v-for="lang in config.langs" :class="{active: lang == params.lang}">
                                 <page :url="changeLanguage($root.context.path, lang)">{{ t(lang) }}</page>
                             </li>
                         </ul>
@@ -66,7 +66,6 @@
     </header>
 </template>
 <script>
-    import {langs} from 'helpers/app';
     import auth from 'helpers/auth';
 
     /**
@@ -77,7 +76,6 @@
         data() {
             return {
                 active: null,
-                langs,
             };
         },
         computed: {

@@ -10,7 +10,7 @@ import {goToUrl} from 'helpers/url';
 export async function login(email, password) {
     var vm = await vueInstanceProvider;
 
-    let user = await http.post(`/${vm.params.lang}/admin/api/auth/login`, {
+    let user = await http.post(`/${vm.params.lang || 'en'}/admin/api/auth/login`, {
         email: email,
         password: password,
     });
@@ -27,7 +27,7 @@ export async function getAvatar(user) {
     try {
         const response = await http.rawHTTPRequest({
             method: 'get',
-            url: `/${vm.params.lang}/admin/api/auth/avatar`,
+            url: `/${vm.params.lang || 'en'}/admin/api/auth/avatar`,
         });
 
         const {avatar} = JSON.parse(response.responseText);
@@ -73,10 +73,10 @@ export async function redirectToLogin() {
     var vm = await vueInstanceProvider;
 
     var path = location.pathname + location.search;
-    if (path != `/${vm.params.lang}/admin/dashboard`) {
-        page.redirect(`/${vm.params.lang}/admin/login?redirect=${encodeURIComponent( path )}`);
+    if (path != `/${vm.params.lang || 'en'}/admin/dashboard`) {
+        page.redirect(`/${vm.params.lang || 'en'}/admin/login?redirect=${encodeURIComponent( path )}`);
     } else {
-        page.redirect(`/${vm.params.lang}/admin/login`);
+        page.redirect(`/${vm.params.lang || 'en'}/admin/login`);
     }
 }
 
@@ -84,7 +84,7 @@ export async function redirectFromLogin() {
     var vm = await vueInstanceProvider;
 
     let queryParams = qs.parse(location.search.substring(1));
-    var url = queryParams.redirect || `/${vm.params.lang}/admin`;
+    var url = queryParams.redirect || `/${vm.params.lang || 'en'}/admin`;
 
     if (url.startsWith(location.origin)) {
         url = url.slice(location.origin.length);
@@ -97,12 +97,12 @@ export async function user() {
     var vm = await vueInstanceProvider;
     try {
         let response = await http.rawHTTPRequest({
-            url: `/${vm.params.lang}/admin/api/auth/user`,
+            url: `/${vm.params.lang || 'en'}/admin/api/auth/user`,
             type: 'json',
         });
         setUser(JSON.parse(response.responseText));
         if (vm.currentPage === 'login') {
-            page.redirect(`/${vm.params.lang}/admin`);
+            page.redirect(`/${vm.params.lang || 'en'}/admin`);
         }
         vm.loaded = true;
     } catch (response) {
@@ -140,10 +140,10 @@ export async function logout() {
     var vm = await vueInstanceProvider;
 
     try {
-        await http.get(`/${vm.params.lang}/admin/api/auth/logout`);
+        await http.get(`/${vm.params.lang || 'en'}/admin/api/auth/logout`);
         setUser(null);
 
-        page.redirect(`/${vm.params.lang}/admin/login`);
+        page.redirect(`/${vm.params.lang || 'en'}/admin/login`);
     } catch (err) {
         console.error(err);
     }

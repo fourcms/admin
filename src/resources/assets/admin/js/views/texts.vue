@@ -54,7 +54,7 @@
                                                         :sort-order="texts.params.sortOrder"
                                                     ></sort-icon>
                                                 </th>
-                                                <th v-for="lang in langs">
+                                                <th v-for="lang in config.langs">
                                                     {{ t(lang) }}
                                                 </th>
                                             </tr>
@@ -64,7 +64,7 @@
                                                 <tr>
                                                     <td>{{ $index + 1 }}</td>
                                                     <td>{{ $key }}</td>
-                                                    <template v-for="lang in langs">
+                                                    <template v-for="lang in config.langs">
                                                         <td width="50%">
                                                             <div class="has-feedback">
                                                                 <auto-grow-text-input

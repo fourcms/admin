@@ -1,7 +1,5 @@
-import {langs} from 'helpers/app';
+import configProvider from 'providers/configProvider';
 
 export default {
-    data() {
-        return {langs};
-    },
+    mixins: [configProvider.mixin('config')],
 };

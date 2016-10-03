@@ -2,7 +2,7 @@ import _ from 'helpers/fp';
 import page from 'page';
 import qs from 'qs';
 import vueInstanceProvider from 'providers/vueInstanceProvider';
-import {langs, defaultLang} from 'helpers/app';
+import configProvider from 'providers/configProvider';
 
 export const route = _.curry((vm, currentPage, context) => {
     context.title = vm.t(currentPage);
@@ -11,7 +11,7 @@ export const route = _.curry((vm, currentPage, context) => {
     vm.context = context;
 });
 
-export function filterLang(context, next) {
+export const filterLang = ({langs, defaultLang}) => (context, next) => {
     if (langs.includes(context.params.lang)) {
         next();
     } else {
@@ -27,11 +27,12 @@ export function query(context, next) {
 
 export async function routes(fn) {
     const vm = await vueInstanceProvider;
+    const config = await configProvider;
 
     page.base('/');
 
-    page(':lang/admin', filterLang);
-    page(':lang/admin/*', filterLang);
+    page(':lang/admin', filterLang(config));
+    page(':lang/admin/*', filterLang(config));
     page(':lang/admin/*', query);
 
     fn({

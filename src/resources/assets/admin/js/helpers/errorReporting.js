@@ -1,6 +1,7 @@
-import {environment} from 'helpers/app';
+import configProvider from 'providers/configProvider';
 
-export function reportException(e) {
+export async function reportException(e) {
+    const {environment} = await configProvider;
     console.error(e);
 
     if (environment == 'production') {
