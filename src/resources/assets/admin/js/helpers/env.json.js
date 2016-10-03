@@ -9,12 +9,12 @@ export default {
 };
 
 function sentryUrl (url) {
-	try {
-	    const [http, part1, part2] = url.split(':');
-	    const [part2_1, part2_2] = part2.split('@');
+    try {
+        const [http, part1, part2] = url.split(':');
+        const [part2_1, part2_2] = part2.split('@');
 
-	    return `${http}:${part1}@${part2_2}`;
-	} catch(err) {
-		return '';
-	}
+        return `${http}:${part1}@${part2_2}`;
+    } catch(err) {
+        return '';
+    }
 }
