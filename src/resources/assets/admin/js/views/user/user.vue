@@ -116,6 +116,8 @@
                         this.create = true;
 
                         this.getNewItem();
+                    } else {
+                        this.create = false;
                     }
                 },
                 immediate: true,
