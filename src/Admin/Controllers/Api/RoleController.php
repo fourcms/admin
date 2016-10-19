@@ -12,7 +12,7 @@ namespace FourCms\Admin\Controllers\Api;
 
 use Illuminate\Http\Request;
 use FourCms\Admin\Controllers\ApiController;
-use Longman\Platfourm\User\Services\GetRolesService;
+use FourCms\Admin\Services\User\GetRolesService;
 
 class RoleController extends ApiController
 {
