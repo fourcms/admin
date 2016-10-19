@@ -212,6 +212,14 @@ class UserController extends ApiController
      *         default="1"
      *     ),
      *     @SWG\Parameter(
+     *         description="Role ID",
+     *         name="role_id",
+     *         required=true,
+     *         type="integer",
+     *         in="query",
+     *         default="1"
+     *     ),
+     *     @SWG\Parameter(
      *         description="Country ID",
      *         name="country_id",
      *         required=false,
