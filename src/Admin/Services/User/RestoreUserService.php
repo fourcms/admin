@@ -38,7 +38,7 @@ class RestoreUserService extends EntityService
 
         $item = $this->repository->withTrashed()->find($id);
 
-        if ( ! $item->trashed()) {
+        if (! $item->trashed()) {
             throw new Exception('Entity is not trashed');
         }
 

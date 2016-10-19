@@ -35,7 +35,7 @@ class UpdateUserStatusService extends EntityService
     {
         $item = $this->repository->find($id);
 
-        if ( ! $this->authUserService->canUpdateUser($item)) {
+        if (! $this->authUserService->canUpdateUser($item)) {
             throw new ForbiddenException('Do not have permission to update this user');
         }
 

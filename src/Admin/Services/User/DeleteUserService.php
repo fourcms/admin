@@ -38,7 +38,7 @@ class DeleteUserService extends EntityService
 
         $item = $this->repository->find($id);
 
-        if ( ! $this->authUserService->canDeleteUser($item)) {
+        if (! $this->authUserService->canDeleteUser($item)) {
             throw new ForbiddenException('Do not have permission to update this user');
         }
 

@@ -55,7 +55,7 @@ class AdminServiceProvider extends ServiceProvider
             return false;
         }
 
-        if ( ! is_array($current)) {
+        if (! is_array($current)) {
             $current = (array) $current;
         }
 

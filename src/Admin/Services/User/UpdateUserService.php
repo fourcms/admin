@@ -33,7 +33,7 @@ class UpdateUserService extends EntityService
     {
         $this->checkRepository();
 
-        if ( ! empty($data['password'])) {
+        if (! empty($data['password'])) {
             $data['password'] = bcrypt($data['password']);
         }
 
