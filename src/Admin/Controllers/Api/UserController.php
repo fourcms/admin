@@ -12,13 +12,13 @@ namespace FourCms\Admin\Controllers\Api;
 
 use Illuminate\Http\Request;
 use FourCms\Admin\Controllers\ApiController;
-use Longman\Platfourm\User\Services\CreateUserService;
-use Longman\Platfourm\User\Services\DeleteUserService;
-use Longman\Platfourm\User\Services\GetUserService;
-use Longman\Platfourm\User\Services\GetUsersService;
-use Longman\Platfourm\User\Services\RestoreUserService;
-use Longman\Platfourm\User\Services\UpdateUserService;
-use Longman\Platfourm\User\Services\UpdateUserStatusService;
+use FourCms\Admin\Services\User\CreateUserService;
+use FourCms\Admin\Services\User\DeleteUserService;
+use FourCms\Admin\Services\User\GetUserService;
+use FourCms\Admin\Services\User\GetUsersService;
+use FourCms\Admin\Services\User\RestoreUserService;
+use FourCms\Admin\Services\User\UpdateUserService;
+use FourCms\Admin\Services\User\UpdateUserStatusService;
 
 class UserController extends ApiController
 {
@@ -387,6 +387,14 @@ class UserController extends ApiController
      *         required=false,
      *         type="string",
      *         enum={"1", "2"},
+     *         in="query",
+     *         default="1"
+     *     ),
+     *     @SWG\Parameter(
+     *         description="Role ID",
+     *         name="role_id",
+     *         required=true,
+     *         type="integer",
      *         in="query",
      *         default="1"
      *     ),
