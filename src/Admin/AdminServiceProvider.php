@@ -55,8 +55,8 @@ class AdminServiceProvider extends ServiceProvider
             return false;
         }
 
-        if (!is_array($current)) {
-            $current = (array)$current;
+        if ( ! is_array($current)) {
+            $current = (array) $current;
         }
 
         $path      = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Controllers';
@@ -64,5 +64,15 @@ class AdminServiceProvider extends ServiceProvider
 
         // Append to config
         config(['l5-swagger.paths.annotations' => $current]);
+
+        $currentBase = config('l5-swagger.paths.base');
+        if ($currentBase) {
+            return;
+        }
+
+        $defaultLocale = $this->app->getDefaultLocale();
+        if ($defaultLocale) {
+            config(['l5-swagger.paths.base' => '/' . $defaultLocale]);
+        }
     }
 }
