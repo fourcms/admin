@@ -1,4 +1,5 @@
 import mainRepository from 'repositories/mainRepository';
+import _ from 'helpers/fp';
 
 export default class userRepository extends mainRepository {
     static apiUrl = '/@params.lang/admin/api/user';
@@ -94,5 +95,26 @@ export default class userRepository extends mainRepository {
                 return params;
             },
         },
+    }
+
+    static async update(item) {
+        // this needs to be changed (but works for now)
+        const itemForSave = _.pickAll([
+            'id',
+            'email',
+            'password',
+            'password_confirmation',
+            'firstname',
+            'lastname',
+            'status',
+            'role_id',
+            // 'country_id',
+            'mobile_phone',
+            'gender',
+            // 'birth_date',
+            'address',
+        ], item);
+
+        return super.update(itemForSave);
     }
 }
