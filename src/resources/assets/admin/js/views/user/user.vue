@@ -163,6 +163,8 @@
                     await loading(this, 'submitting', false, async () => {
                         this.item = await (this.create ? repository.create(this.item) : repository.update(this.item));
 
+                        dontLeave.release();
+
                         // this needs to be changed (but works for now)
                         setTimeout(() => dontLeave.release(), 200);
 
