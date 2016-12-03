@@ -16,7 +16,7 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*|5.2.*",
         "longman/laravel-platfourm": "~0.0.1",
-        "fourcms/auth": "~1.0.0",
+        "fourcms/auth": "dev-master",
         "kalnoy/nestedset": "~4.1"
     },
     "require-dev": {
@@ -41,8 +41,8 @@
     },
     "repositories": [
         {
-            "type": "composer",
-            "url": "https://packagist.itdc.ge"
+            "type": "git",
+            "url": "https://github.com/fourcms/auth"
         }
     ]
 }
