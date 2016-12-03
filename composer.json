@@ -38,11 +38,5 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
-    },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/fourcms/auth"
-        }
-    ]
+    }
 }
